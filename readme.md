@@ -1,6 +1,6 @@
 # PyChain
 
-Personal implenetation of markov chains in python. Aiming for believable generation
+Personal implantation of markov chains in python. Aiming for believable generation
 of texts, patterned generation of components to roguelikes and maybe more.
 
 ### Usage

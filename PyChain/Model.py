@@ -20,15 +20,15 @@ class Model(object):
         model = dict()
 
         for run in range(len(corpus) - n):
-            gram = tuple(corpus[run:run+n])
-            next_token = corpus[run+n]
+            gram = tuple(corpus[run:run + n])
+            next_token = corpus[run + n]
 
             if gram in model:
                 model[gram].append(next_token)
             else:
                 model[gram] = [next_token]
 
-            final_gram = tuple(corpus[len(corpus)-n:])
+            final_gram = tuple(corpus[len(corpus) - n:])
             if final_gram in model:
                 model[final_gram].append(None)
             else:
