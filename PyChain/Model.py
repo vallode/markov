@@ -1,14 +1,22 @@
 import random
 
 
-class Model:
-    """A Markov model for a corpus"""
+class Model(object):
+    """A Markov model for a corpus
+
+    Args:
+        corpus (str): Text to be modeled into a markov chain
+        n (int): State-size to be modeled
+
+    Attributes:
+        model (object): Markov chain representation of the corpus as an n-gram model
+    """
 
     def __init__(self, corpus, n=2):
-        self.model = self.build_model(corpus, n)
+        self.model = self.build_model(corpus.split(), n)
 
     def build_model(self, corpus, n):
-        """Builds a dict representation of the markov chain"""
+        """dict: Returns a dict of list representing states and their links"""
         model = dict()
 
         for run in range(len(corpus) - n):
@@ -29,6 +37,7 @@ class Model:
         return model
 
     def generate(self, n, init=None, max_iter=100):
+        """str: Returns a string composed of generated n-grams"""
         if init is None:
             init = random.choice(list(self.model.keys()))
 
@@ -48,4 +57,4 @@ class Model:
             else:
                 break
 
-        return ''.join(output)
+        return ' '.join(output)
