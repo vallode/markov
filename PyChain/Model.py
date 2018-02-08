@@ -9,9 +9,7 @@ class Model(object):
         n (int): State-size to be modeled
 
     Attributes:
-        model (object): Markov chain representation of the corpus as an n-gram model
-    """
-
+        model (object): Markov chain representation of the corpus as an n-gram model"""
     def __init__(self, corpus, n=2):
         self.model = self.build_model(corpus.split(), n)
 

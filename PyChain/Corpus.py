@@ -13,10 +13,8 @@ class Corpus(object):
 
     Attributes:
         data: (str): Input stripped of any special characters
-        model (Object): A markov model of state-size `n`
-    """
-
-    def __init__(self, data, n):
+        model (Object): A markov model of state-size `n`"""
+    def __init__(self, data, n=2):
         self.data = strip_text(data)
         self.model = Model(self.data, n)
 
